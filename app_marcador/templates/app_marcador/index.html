@@ -3,9 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Padel_Display</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 200px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hola</h1>
+    <table id="display">
+        <td id="players">
+            <tr id="player_a">
+                jugador A
+            </tr>
+            <tr id="player_b">
+                Jugador B
+            </tr>
+        </td>
+        <td id="set1">
+            <tr id="set1_games_a">
+                0
+            </tr>
+            <tr id="set1_games_b">
+                0
+            </tr>
+        </td>
+        <td id="set2">
+            <tr id="set2_games_a">
+                0
+            </tr>
+            <tr id="set2_games_b">
+                0
+            </tr>
+        </td>
+        <td id="set3">
+            <tr id="set3_games_a">
+                0
+            </tr>
+            <tr id="set3_games_b">
+                0
+            </tr>
+        </td>
+        <td id="points">
+            <tr id="points_a">
+                0
+            </tr>
+            <tr id="points_b">
+                0
+            </tr>
+        </td>
+    </table>
+    <h2><button id="buttona" onclick="sumarpunta()">+</button><button id="buttonb">+</button></h2>
+
+
+
+
+
+    <script>
+        var punts_a = 0
+        var punts_b = 0
+        var jocs_a = 0
+        var jocs_b = 0
+        var sets_a = 0
+        var sets_b = 0
+        function sumarpunta() {
+            let valor = document.getElementById('points_a')
+            if (punts_a == 40) {
+                punts_a = 0;
+                jocs_a += 1
+            }
+            if (punts_a == 0) {
+                punts_a += 15
+            }
+            else if (punts_a == 15) {
+                punts_a += 15
+            }
+            else if (punts_a == 30) {
+                punts_a += 10
+            }
+            valor.innerHTML = punts_a + ':' + punts_b;
+        }
+    </script>
 </body>
 </html>
